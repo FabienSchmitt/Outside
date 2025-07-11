@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bimcuu664i7f8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uc1xx"]
+size = Vector3(1, 4, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uc1xx"]
+albedo_color = Color(0.180453, 0.0753769, 0.00417155, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_brfkd"]
+radius = 2.0
+height = 4.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnvrw"]
+albedo_color = Color(0.0535472, 0.210697, 0.0534972, 1)
+
+[node name="Tree" type="Node3D"]
+
+[node name="Trunk" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_uc1xx")
+surface_material_override/0 = SubResource("StandardMaterial3D_uc1xx")
+
+[node name="Leaves" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.48075, 0)
+mesh = SubResource("SphereMesh_brfkd")
+surface_material_override/0 = SubResource("StandardMaterial3D_nnvrw")

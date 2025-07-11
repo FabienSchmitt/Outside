@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhat2dsfwj2l7"]
+
+[ext_resource type="Texture2D" uid="uid://cg2me1qnqkvsm" path="res://icon.svg" id="1_dyi7p"]
+[ext_resource type="Script" uid="uid://mdivp2xul7df" path="res://Scripts/sprite_3d.gd" id="2_xdya4"]
+[ext_resource type="Script" uid="uid://cn7q53fcx3evc" path="res://Scripts/mesh.gd" id="3_xdya4"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_dyi7p"]
+
+[node name="2ndScene" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.110499)
+texture = ExtResource("1_dyi7p")
+script = ExtResource("2_xdya4")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.877583, -0.229849, 0.420736, 0, 0.877583, 0.479426, -0.479426, -0.420736, 0.770151, 1.03425, 1.17852, 1.89318)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_dyi7p")
+script = ExtResource("3_xdya4")

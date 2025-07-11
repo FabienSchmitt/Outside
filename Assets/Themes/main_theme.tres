@@ -1,0 +1,55 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cqgswc33s7uxn"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_s1g48"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+color = Color(0, 0.956863, 0, 1)
+vertical = true
+
+[sub_resource type="FontFile" id="FontFile_s1g48"]
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s1g48"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1g48"]
+content_margin_left = 50.0
+content_margin_top = 50.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
+bg_color = Color(0.129558, 0.129559, 0.129558, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.956863, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.0470588, 0.0470588, 0.0470588, 0.741176)
+shadow_size = 2
+
+[resource]
+Button/colors/font_focus_color = Color(0, 0.956863, 0, 1)
+Button/fonts/font = null
+Button/styles/normal = SubResource("StyleBoxLine_s1g48")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0.956863, 0, 1)
+Label/font_sizes/font_size = 30
+Label/fonts/font = SubResource("FontFile_s1g48")
+Label/styles/normal = SubResource("StyleBoxEmpty_s1g48")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_s1g48")
+VBoxContainer/constants/separation = 18

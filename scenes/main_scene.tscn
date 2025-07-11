@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccf0i6hciuyrb"]
+
+[ext_resource type="Script" uid="uid://5urcidfgcngh" path="res://Scripts/game_controller.gd" id="1_7ykc4"]
+[ext_resource type="PackedScene" uid="uid://duxafk7ucqrbw" path="res://scenes/splashScreen.tscn" id="3_gubc5"]
+
+[node name="MainScene" type="Node" node_paths=PackedStringArray("world_3d", "gui")]
+script = ExtResource("1_7ykc4")
+world_3d = NodePath("World3D")
+gui = NodePath("GUI")
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SplashScreen" parent="GUI" instance=ExtResource("3_gubc5")]
+layout_mode = 1
+
+[node name="World3D" type="Node3D" parent="."]
