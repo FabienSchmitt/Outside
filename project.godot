@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://Scripts/gobal.gd"
+GameController="*res://Scripts/game_controller.gd"
 
 [dotnet]
 
