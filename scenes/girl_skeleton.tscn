@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1bkau7hlbksl"]
-
-[ext_resource type="PackedScene" uid="uid://topgynpxuhf8" path="res://player/Girl.fbx" id="1_s8yfr"]
-
-[node name="Girl" instance=ExtResource("1_s8yfr")]
