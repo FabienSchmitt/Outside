@@ -1,48 +1,44 @@
-extends CharacterBody3D
+class_name TimmyMovement extends CharacterBody3D
 
-@export() var speed : float = 15;
-@export() var jumpSpeed : float = 5;
-@onready var animation_player = $"../Timmy_test/AnimationPlayer"
-@onready var armature = $"../Timmy_test/ExportRoot"
+@export() var speed := 15
+@export() var jumpSpeed := 15
+@export() var gravity := -30
 
-var lerping : float = 0.15
-var running : bool = false
+@export() var xxx : ArmatureAnimation
 
+@onready var animation_player = $"AnimationPlayer"
+@onready var armature = $"ExportRoot"
+
+var running := false 
+var lerping := 0.15
 
 func _physics_process(delta: float) -> void:
-	var input_h = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	var input_v = Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down")
+	var input_raw = Input.get_vector("left", "right", "forward", "backward")
+	var input_h = input_raw.x
+	var input_v = input_raw.y
 	
 	if !is_on_floor() :
-		velocity.y += get_gravity().y * delta
-		
-	if  Input.is_action_just_pressed("jump") : 
+		velocity.y += gravity * delta
+	elif  Input.is_action_just_pressed("jump") : 
 		velocity.y += jumpSpeed
-		
+		jump()
+	
 	var movement = Vector3.RIGHT * input_h + Vector3.FORWARD * input_v
 	movement = movement.normalized() * speed
 	
 	if movement.length() > 0.1:
-		animation_player.play("timmy_test/Runing")
 		running = true
 		var facing_direction = global_transform.origin + movement.normalized()
 		facing_direction.y = global_transform.origin.y
 		armature.look_at(facing_direction, Vector3.UP)
-		#var target_pos = global_transform.origin + movement.normalized()
-		#var current_basis = armature.global_transform.basis
-		#var target_basis = Transform3D().looking_at(target_pos - armature.global_transform.origin, Vector3.UP).basis
-		#armature.global_transform.basis = current_basis.slerp(target_basis, delta * 10.0)
-	
-	elif running:
-		running = false
-		animation_player.play("timmy_test/Stop")
-		
 	else : 
 		running = false
-		animation_player.play("timmy_test/Idle")
 	
 	velocity.x = movement.x
 	velocity.z = movement.z
 	move_and_slide()
 	
-	
+	# Do animation stuff.
+
+func jump() -> void : 
+	animation_state_machine.travel("JumpUp")	
