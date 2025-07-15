@@ -3,7 +3,7 @@ class_name TimmyMovement extends CharacterBody3D
 
 @export() var speed := 8.0
 @export() var acceleration := 200.0
-@export() var jumpSpeed := 12.0
+@export() var jumpSpeed := 10.0
 @export() var gravity := -30.0
 @export() var rotation_speed := 12.0
 

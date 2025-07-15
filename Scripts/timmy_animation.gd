@@ -24,5 +24,5 @@ func blend_air_or_land(delta: float) -> void:
 
 func blend_jump_or_fall(delta : float) -> void : 
 	var target = 0.0 if timmy_movement.velocity.y >= 0.0 else 1.0
-	current_jump_blend = lerp(current_jump_blend, target, blend_speed * delta)
+	#current_jump_blend = lerp(current_jump_blend, target, blend_speed * delta)
 	animation_tree.set("parameters/BlendJumpOrFall/blend_amount", current_jump_blend)
